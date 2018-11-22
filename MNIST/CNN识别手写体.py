@@ -9,10 +9,10 @@ from keras.utils import np_utils
 from keras import backend as K
 import MNIST
 
-# 全局变量  
+# 全局变量
 batch_size = 128  # 批处理样本数量
 nb_classes = 10  # 分类数目
-epochs = 600  # 迭代次数
+epochs = 5000  # 迭代次数
 img_rows, img_cols = 28, 28  # 输入图片样本的宽高
 nb_filters = 32  # 卷积核的个数
 pool_size = (2, 2)  # 池化层的大小
@@ -49,5 +49,7 @@ model.compile(loss='categorical_crossentropy',optimizer='adadelta',metrics=['acc
 model.fit(X_train, Y_train, batch_size=batch_size, epochs=epochs,verbose=1, validation_data=(X_test, Y_test))
 # 评估模型
 score = model.evaluate(X_test, Y_test, verbose=0)
+
+model.save('test_1.h5')
 print('Test score:', score[0])
 print('Test accuracy:', score[1])

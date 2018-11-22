@@ -111,9 +111,3 @@ if __name__=="__main__":
     onepic = train_data_set[12]  # 取一个样本
     printimg(onepic)  # 打印出来这一行所显示的图片
     print(train_labels[12].argmax())  # 打印样本标签
-
-
-
-
-
-
